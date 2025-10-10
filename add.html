@@ -1,14 +1,198 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ari</title>
+    <title>İnşaat Firması</title>
+    <style>
+        /* Genel Ayarlar */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #1A2637;
+            padding: 40px 0;
+            color: white;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        header .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header .logo {
+            width: 100px;
+            margin-bottom: 20px;
+        }
+
+        header h1 {
+            font-size: 36px;
+            font-weight: 700;
+        }
+
+        /* Ana İçerik */
+        main {
+            padding: 50px 20px;
+        }
+
+        .contact-section {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            padding: 40px 30px;
+        }
+
+        .contact-section h2 {
+            text-align: center;
+            font-size: 28px;
+            color: #1A2637;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+
+        .contact-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            background-color: #3498db;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            width: calc(33% - 20px);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-5px);
+            background-color: #2980b9;
+        }
+
+        .contact-item .icon {
+            width: 30px;
+            height: 30px;
+            margin-right: 15px;
+        }
+
+        .contact-item span {
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1A2637;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        footer p {
+            font-size: 14px;
+        }
+
+        /* Mobil Uyumlu */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 28px;
+            }
+
+            .contact-item {
+                width: calc(50% - 20px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .contact-item {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 <body>
-    ahmed 
-    hilal 
-    fatma 
-    belinay
+    <header>
+        <div class="container">
+            <img src="logo.png" alt="Firma Logosu" class="logo">
+            <h1>İnşaat Firması</h1>
+        </div>
+    </header>
+
+    <main>
+        <section class="contact-section">
+            <h2>İletişim Bilgileri</h2>
+            <div class="contact-list">
+                <!-- Telefon butonu birleşti ve kullanıcıya soru soruluyor -->
+                <a href="javascript:void(0);" onclick="selectPhoneNumber()" class="contact-item">
+                    <img src="phone-icon.png" alt="Telefon" class="icon">
+                    <span>Telefon (1 & 2)</span>
+                </a>
+                <a href="mailto:ornek@gmail.com" class="contact-item">
+                    <img src="gmail-icon.png" alt="Gmail" class="icon">
+                    <span>Gmail</span>
+                </a>
+                <a href="https://www.orneksite.com" class="contact-item">
+                    <img src="link-icon.png" alt="Web Sayfası" class="icon">
+                    <span>Web Sayfası</span>
+                </a>
+                <a href="https://maps.google.com/?q=Adres+Burada" class="contact-item">
+                    <img src="address-icon.png" alt="Adres" class="icon">
+                    <span>Adres</span>
+                </a>
+                <a href="https://www.instagram.com/firmasocial" class="contact-item">
+                    <img src="instagram-icon.png" alt="Instagram" class="icon">
+                    <span>Instagram</span>
+                </a>
+                <a href="https://www.linkedin.com/company/firmalinkedin" class="contact-item">
+                    <img src="linkedin-icon.png" alt="LinkedIn" class="icon">
+                    <span>LinkedIn</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 İnşaat Firması. Tüm hakları saklıdır.</p>
+    </footer>
+
+    <script>
+        function selectPhoneNumber() {
+            // Kullanıcıya hangi numarayı aramak istediğini soruyoruz
+            var phoneChoice = prompt("Hangi numarayı aramak istersiniz?\n1. Telefon: +905xxxxxxxxx\n2. Telefon: +905xxxxxxxxx\n\nYazın 1 veya 2'yi seçin");
+
+            // Kullanıcı 1 seçerse
+            if (phoneChoice === '1') {
+                // Burada direk telefon numarasını kullanıyoruz, WhatsApp değil!
+                window.location.href = "tel:+905xxxxxxxxx";  // Telefon numarasını buraya ekle
+            }
+            // Kullanıcı 2 seçerse
+            else if (phoneChoice === '2') {
+                // Burada da 2. telefon numarasını kullanıyoruz.
+                window.location.href = "tel:+905xxxxxxxxx";  // Telefon numarasını buraya ekle
+            }
+            else {
+                alert("Geçersiz seçim! Lütfen 1 veya 2 girin.");
+            }
+        }
+    </script>
 </body>
 </html>
